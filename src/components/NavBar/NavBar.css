@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montagu+Slab:wght@200&family=Open+Sans:ital,wght@1,300&display=swap');
+.logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+    color: black;
+}
+#logoMalu {
+    margin-left: 10px;
+}
+.navBar {
+    display: flex;
+    align-items: flex-end;
+    background: #eae6ca;
+    color: black;
+    font-weight: 300;
+    align-content: center;
+    justify-content: flex-start;
+}
+.navBarItem {
+    display: flex;
+    font-weight: 500;
+    margin-right: 30px;
+    margin-left: 500px;
+}
+.navLink {
+    text-decoration: none;
+    background-color: transparent;
+    color: black;
+}
+.icon {
+    display: flex;
+    margin-left: 650px;
+    margin-bottom: 10px;
+   
+}
+.iconCart {
+    text-decoration: none;
+    background-color: transparent;
+    color: black;
+}

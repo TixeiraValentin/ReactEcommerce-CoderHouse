@@ -1,0 +1,21 @@
+.detailConteiner {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.detailImg {
+    float: left;
+    box-shadow: 10px 10px 5px grey;
+    margin-top: 50px;
+}
+.textDecorationNone {
+    text-decoration: none;
+}
+.imageItemDetail {
+    max-width: 100%;
+    height: auto;
+}
+.itemCount {
+    margin-top: 100px;
+    margin-left: 200px;
+}
