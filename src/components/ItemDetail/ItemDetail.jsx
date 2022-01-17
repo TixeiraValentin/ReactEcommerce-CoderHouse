@@ -9,7 +9,7 @@ function ItemDetail({item}) {
     
   const [carrito, setCarrito] = useState(true)
   const {cartList, addToCart} = useCartContext()
-  
+  const tab = <>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</>
   
   const onAdd = (cant) => {
     console.log(cant, 'CANTIDAD')
@@ -19,18 +19,29 @@ function ItemDetail({item}) {
   console.log(cartList)
   return (
       
+                      <>
+                              <div className='displayFlexItemDetail breadcrumb-nav'>
+                                <Link className='color-black playFaireFont' to="/">Página de inicio</Link>{tab}/<span className='playFaireFont'>{tab}{item.name}</span>
+                              </div>
                               <div className='detailConteiner'>
                                       <div className='detailImg '>
-                                          <img className='imageItemDetail' src={item.photo} alt="" />
+                                          <img className='imageItemDe tail' src={item.image} alt="" />
                                       </div>
-                                      <div className='itemCount'>
+                                      <div className='itemCount playFaireFont col-4'>
+                                        <div>
                                           <h3>{item.name}</h3>
-                                          <p>{item.description}</p>
+                                        </div>
+                                        <div className='spaceEvenly sourceSansPro'>
+                                          <p>{item.colors}</p>
                                           <p>{item.price}</p>
+                                        </div>
+                                        <div>
+                                          <span>{item.description}</span>
+                                        </div>
                                           {carrito ? <ItemCount max={item.stock} onAdd={onAdd}/> : <Button variant="outline-primary"><Link className='textDecorationNone' to="/cart">Terminar mi compra</Link></Button>}
                                       </div>
-                              
                               </div>
+                      </>
                        
 
   )

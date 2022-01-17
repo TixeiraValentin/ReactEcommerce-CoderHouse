@@ -12,6 +12,16 @@ function CartContextProvider ({children}) {
         setCartList ([])
         setCantCart(0)
     }
+    
+    function borrarElemento(item) {
+        let arr = cartList.filter(e => e.name !== item.name)
+        setCartList(arr)
+        console.log(arr.length)
+        if (arr.length == 0) {
+            setCantCart(0)
+        }
+        else { setCantCart (cantCart - item.cantidad)}
+    }
 
 
     function addToCart (item, cantidad) {
@@ -20,7 +30,7 @@ function CartContextProvider ({children}) {
 
             if (index > -1) {
                 const oldQy = cartList[index].cantidad
-                setCantCart (item.cantidad)
+                setCantCart (item.cantidad + cantCart)
                 console.log('entre al if')
                 cartList.splice(index, 1)
                 setCartList([...cartList, { ...item, cantidad : item.cantidad + oldQy}])
@@ -29,7 +39,7 @@ function CartContextProvider ({children}) {
 
             else{
                 setCartList([...cartList, item])
-                setCantCart (item.cantidad)
+                setCantCart (item.cantidad + cantCart)
                 console.log('entre al else')
                 console.log(item)
             }
@@ -41,7 +51,8 @@ function CartContextProvider ({children}) {
             cantCart,
             cartList, 
             addToCart,
-            borrarCarrito
+            borrarCarrito,
+            borrarElemento
             }}>
         {children}
         </CartContext.Provider>

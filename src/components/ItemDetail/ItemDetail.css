@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 .detailConteiner {
     display: flex;
     flex-direction: row;
@@ -6,7 +8,8 @@
 .detailImg {
     float: left;
     box-shadow: 10px 10px 5px grey;
-    margin-top: 50px;
+    /* margin-top: 50px; */
+    /* max-width: 500px; */
 }
 .textDecorationNone {
     text-decoration: none;
@@ -14,8 +17,29 @@
 .imageItemDetail {
     max-width: 100%;
     height: auto;
+    
 }
 .itemCount {
     margin-top: 100px;
     margin-left: 200px;
+}
+.displayFlexItemDetail {
+    display: flex;
+    padding-top: 20px ;
+    padding-bottom: 20px;
+    padding-left: 70px;
+}
+.color-black {
+    color: black;
+}
+.playFaireFont {
+    font-family: 'Playfair Display', serif;
+}
+.spaceEvenly {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.sourceSansPro {
+    font-family: 'Source Sans Pro', sans-serif;
 }

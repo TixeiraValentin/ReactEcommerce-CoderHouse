@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { getFetch } from "../services/getFetch";
 import "./ItemDetailContainer.css"
+import {collection ,doc, getDoc, getFirestore} from 'firebase/firestore'
 
 
 const ItemDetailContainer = () => {
@@ -11,19 +12,27 @@ const ItemDetailContainer = () => {
 
   const {idProd} = useParams()
   
-  useEffect(() => {
+  useEffect (() => {
+     const db = getFirestore()
+    const queryDb = doc(db, 'items', '7tfH2by8XLeX75g6QX09')
+    getDoc(queryDb)
+    .then(resp => setItem({ id: resp.id, ...resp.data()}))
+}, [idProd])
+ 
+ 
+  // useEffect(() => {
     
-    getFetch
-    .then(resp => setItem(resp.find(prod => prod.id === parseInt(idProd))))
-    .catch(err => console.log(err))
+  //   getFetch
+  //   .then(resp => setItem(resp.find(prod => prod.id === parseInt(idProd))))
+  //   .catch(err => console.log(err))
 
-    setTimeout(() => {
-      setLoading(false)
-    }, 1000);
-  //  .finally(() => setLoading(false))
+  //   setTimeout(() => {
+  //     setLoading(false)
+  //   }, 1000);
+  // //  .finally(() => setLoading(false))
 
-  },[idProd]);
-  console.log(item)
+  // },[idProd]);
+  // console.log(item)
 
   return (
     <div className="itemDetailConteiner">
