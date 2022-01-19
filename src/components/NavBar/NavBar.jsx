@@ -15,8 +15,9 @@ function NavBar() {
                               <Link className="navLink logo" to="/">Malú</Link>
                           </div>
                           <div className='navBarItem'>
-                                <Link className="navLink" to="/categoria/remera"><ul>Remeras</ul></Link>
-                                <Link className="navLink" to="/categoria/swaterYPantalon"><ul>Pantalones</ul></Link>
+                                <Link className="navLink" to="/categoria/Remera"><ul>Remeras</ul></Link>
+                                <Link className="navLink" to="/categoria/Pantalon"><ul>Pantalones</ul></Link>
+                                <Link className="navLink" to="/categoria/Polera"><ul>Polera</ul></Link>
                                 
                           </div>
                           <div className='icon'>

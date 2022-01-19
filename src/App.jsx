@@ -27,11 +27,6 @@ function App() {
                                         />
                                         <Route
                                         exact
-                                        path="/categoria"
-                                        element={<ItemListContainer/>}
-                                        />
-                                        <Route
-                                        exact
                                         path="/categoria/:idCate"
                                         element={<ItemListContainer/>}
                                         />
