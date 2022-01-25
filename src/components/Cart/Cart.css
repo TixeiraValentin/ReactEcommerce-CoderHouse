@@ -16,3 +16,6 @@
     flex-direction: row;
     justify-content: space-between;
 }
+.buttonsCart {
+    margin-right: 50px;
+}

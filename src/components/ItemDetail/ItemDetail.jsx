@@ -25,7 +25,7 @@ function ItemDetail({item}) {
                               </div>
                               <div className='detailConteiner'>
                                       <div className='detailImg '>
-                                          <img className='imageItemDe tail' src={item.image} alt="" />
+                                          <img className='imageItemDe tail' src={item.imageID} alt="" />
                                       </div>
                                       <div className='itemCount playFaireFont col-4'>
                                         <div>
