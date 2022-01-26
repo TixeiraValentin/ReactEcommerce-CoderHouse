@@ -16,8 +16,7 @@ function CartContextProvider ({children}) {
     function borrarElemento(item) {
         let arr = cartList.filter(e => e.name !== item.name)
         setCartList(arr)
-        console.log(arr.length)
-        if (arr.length == 0) {
+        if (arr.length === 0) {
             setCantCart(0)
         }
         else { setCantCart (cantCart - item.cantidad)}

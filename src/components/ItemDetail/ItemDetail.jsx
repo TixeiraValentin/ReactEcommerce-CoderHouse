@@ -12,11 +12,9 @@ function ItemDetail({item}) {
   const tab = <>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</>
   
   const onAdd = (cant) => {
-    console.log(cant, 'CANTIDAD')
     addToCart({...item, cantidad:cant})
     setCarrito(false)
   }
-  console.log(cartList)
   return (
       
                       <>

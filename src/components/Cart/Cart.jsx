@@ -1,52 +1,27 @@
 import { Button } from 'react-bootstrap'
 import {useCartContext } from '../../context/CartContext'
-import {addDoc, collection, doc, getFirestore, Timestamp, updateDoc, writeBatch} from "firebase/firestore"
 import './Cart.css'
+import { Link } from 'react-router-dom'
 
 
 export const Cart = () => {
 
-    const {cartList, borrarCarrito, borrarElemento, precioTotal} = useCartContext ()
 
+    const {cartList, borrarElemento} = useCartContext ()
 
-    const generarOrden = (e) => {
-        e.preventDefault()
-        let orden = {}
-        orden.date = Timestamp.fromDate(new Date())
-        orden.buyer = {}
-        orden.total = precioTotal()
-        orden.item = cartList.map(cartItem => {
-            const id = cartItem.id
-            const nombre = cartItem.name
-            const precio = cartItem.price * cartItem.cantidad
-            return {id, nombre, precio}
-        })
+        // const collectionNoti = collection(db, 'items')
+        // const queryActulizarStock = query(
+        //     collectionNoti, where( documentId() , 'in', cartList.map(it => it.id))          
+        // )
 
-        const db = getFirestore()
-        const ordersCollection = collection(db, 'orders')
-        addDoc(ordersCollection, orden)
-        .then(resp => console.log(resp))
-        .catch(err => console.log (err))
+        // const batch = writeBatch(db)
 
-        const docModificar = doc(db, 'items', '7tfH2by8XLeX75g6QX09')
-        const docModificar2 = doc(db, 'items', 'WJWQ583vJlLQDPtGhSgj')
-        updateDoc(docModificar, {
-            stock: 9
-        })
-        .then(resp => console.log('modifique el stock'))
-        .catch(err => console.log(err))
+        // getDoc(queryActulizarStock)
+        // .then(resp => resp.docs.forEach(res => batch.update(res.ref, {
+        //     stock: resp.data().stock - cartList.find(item => item.id === resp.id).cantidad
+        // })))
 
-        const batch = writeBatch(db)
-        batch.update(docModificar,{
-            stock: 8
-        })
-        batch.update(docModificar2, {
-            stock:7
-        })
-        batch.commit()
-
-    }
-
+        // batch.commit()
     return (
         <>
         <div className='cart row'>
@@ -84,10 +59,9 @@ export const Cart = () => {
                     </div>
                     )}
                     <div>
-                        <Button className='buttonsCart' onClick={borrarCarrito}> Vaciar Carrito</Button>
-                        <Button onClick={generarOrden}>Comprar</Button>
+                        <Button><Link style={{color: 'white'}} className='textDecorationNone' to="/formCart">Comprar</Link></Button>
                     </div>
-                    <div>Su orden a sido extiosa, su ID de compra es:</div>
+                    
 
             </div>
         </div>

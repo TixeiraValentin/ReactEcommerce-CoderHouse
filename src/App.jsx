@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Router} from 'react-router-dom'
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import CartContextProvider from './context/CartContext';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
@@ -6,6 +6,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import { Cart } from './components/Cart/Cart';
+import { FormCart } from './components/FormCart/FormCart';
 
 
 
@@ -40,6 +41,10 @@ function App() {
                                         path="/cart"
                                         element={<Cart/>}
                                         />
+                                        <Route
+                                        exact
+                                        path="/formCart"
+                                        element={<FormCart/>}/>
                                 </Routes>
                         </center>
                     </BrowserRouter>

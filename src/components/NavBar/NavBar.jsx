@@ -6,7 +6,7 @@ import { useCartContext } from '../../context/CartContext';
 function NavBar() {
     
     const {cantCart} = useCartContext()
-    console.log(cantCart)
+    
     return (
 
               <>

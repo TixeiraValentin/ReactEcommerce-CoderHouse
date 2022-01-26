@@ -2,7 +2,6 @@ import {Link} from "react-router-dom"
 import Card from "react-bootstrap/Card"
 import Button  from "react-bootstrap/Button";
 import './Item.css'
-import {button} from "react-bootstrap/Button"
 
 function Item({prod}) {
     return (
