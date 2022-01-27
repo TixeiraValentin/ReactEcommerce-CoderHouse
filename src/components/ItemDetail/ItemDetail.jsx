@@ -8,7 +8,7 @@ import './ItemDetail.css'
 function ItemDetail({item}) {
     
   const [carrito, setCarrito] = useState(true)
-  const {cartList, addToCart} = useCartContext()
+  const  {addToCart} = useCartContext()
   const tab = <>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</>
   
   const onAdd = (cant) => {

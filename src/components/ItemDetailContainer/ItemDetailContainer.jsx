@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import "./ItemDetailContainer.css"
 import {doc, getDoc, getFirestore} from 'firebase/firestore'
+import ReactLoading from 'react-loading';
 
 
 const ItemDetailContainer = () => {
@@ -24,7 +25,7 @@ const ItemDetailContainer = () => {
   return (
     <div className="itemDetailConteiner">
       { loading ?
-            <h2>Cargando...</h2> : <ItemDetail item={item} />
+            <ReactLoading type={'spinningBubbles'} color={'black'} height={200} width={150} /> : <ItemDetail item={item} />
 }
     </div>
   );

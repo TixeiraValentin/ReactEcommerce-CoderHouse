@@ -3,6 +3,7 @@ import { useParams} from "react-router-dom"
 import ItemList from "../ItemList/ItemList";
 import '../ItemListContainer/ItemListContainer.css'
 import { collection , getFirestore, query, where, getDocs} from 'firebase/firestore'
+import ReactLoading from 'react-loading';
 
 function ItemListContainer( {greeting} ) {
   
@@ -39,7 +40,7 @@ function ItemListContainer( {greeting} ) {
         <div className="positionFix">
             { greeting }
             { loading ?
-            <h2>Cargando...</h2>  : <ItemList productos={productos} /> }
+            <ReactLoading type={'spinningBubbles'} color={'black'} height={200} width={150} />  : <ItemList productos={productos} /> }
         </div>             
             
     )

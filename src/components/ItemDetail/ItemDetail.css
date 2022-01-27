@@ -38,7 +38,7 @@
 .spaceEvenly {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 .sourceSansPro {
     font-family: 'Source Sans Pro', sans-serif;

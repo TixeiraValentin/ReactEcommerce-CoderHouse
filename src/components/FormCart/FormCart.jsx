@@ -10,7 +10,7 @@ import swal from 'sweetalert'
 export const FormCart = () => {
     
     const navegate = useNavigate()
-    const [idOrder, setIdOrder] = useState('')
+    
     const [dataForm, setDataForm] = useState({
         name:"", email:"", phone:""
     })
@@ -41,7 +41,7 @@ export const FormCart = () => {
         const db = getFirestore()
         const ordersCollection = collection(db, 'orders')
         addDoc(ordersCollection, orden)
-        .then(resp => {setIdOrder(resp.id) ; swal("¡Su compra a sido exitosa!", `Su ID de seguimiento es: ${resp.id}`, "success");})
+        .then(resp => {swal("¡Su compra a sido exitosa!", `Su ID de seguimiento es: ${resp.id}`, "success");})
         .catch(err => console.log (err))
         .finally(()=>{
             borrarCarrito()
