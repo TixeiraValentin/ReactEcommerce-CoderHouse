@@ -19,3 +19,13 @@
 .buttonsCart {
     margin-right: 50px;
 }
+.precioTotal {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    border-color: black;
+    border: solid 1px;
+    border-radius: 20px;
+    width: 200px;
+    
+}

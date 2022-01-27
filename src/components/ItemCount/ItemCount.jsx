@@ -11,10 +11,10 @@ const ItemCount = ({max, onAdd}) => {
     const [value, setValue] = useState(inicial)
 
     const handleSuma = () => {
-        value < max ? setValue(prev => prev + 1) : alert('compra maxima')
+        value < max && setValue(prev => prev + 1)
     }
     const handleResta = () => {
-            value > inicial ? setValue(prev => prev - 1) : alert('compra minima')
+            value > inicial && setValue(prev => prev - 1) 
         }
 
     return (

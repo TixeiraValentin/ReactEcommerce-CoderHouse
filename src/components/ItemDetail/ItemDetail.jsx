@@ -31,7 +31,7 @@ function ItemDetail({item}) {
                                         </div>
                                         <div className='spaceEvenly sourceSansPro'>
                                           <p>{item.colors}</p>
-                                          <p>{item.price}</p>
+                                          <p>{item.price}$</p>
                                         </div>
                                         <div>
                                           <span>{item.description}</span>

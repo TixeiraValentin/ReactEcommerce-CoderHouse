@@ -2,12 +2,14 @@ import { Button } from 'react-bootstrap'
 import {useCartContext } from '../../context/CartContext'
 import './Cart.css'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 
 export const Cart = () => {
 
 
-    const {cartList, borrarElemento} = useCartContext ()
+    const {cartList, borrarElemento, precioTotal} = useCartContext ()
+    const tab = <>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</>
 
         // const collectionNoti = collection(db, 'items')
         // const queryActulizarStock = query(
@@ -24,6 +26,9 @@ export const Cart = () => {
         // batch.commit()
     return (
         <>
+        <div className='displayFlexItemDetail breadcrumb-nav'>
+        <Link className='color-black playFaireFont' to="/">Página de inicio</Link>{tab}/<span className='playFaireFont'>{tab}Carrito</span>
+        </div>
         <div className='cart row'>
             <div className='col-6'>
                 <div className='borderBottom'>
@@ -59,8 +64,15 @@ export const Cart = () => {
                     </div>
                     )}
                     <div>
-                        <Button><Link style={{color: 'white'}} className='textDecorationNone' to="/formCart">Comprar</Link></Button>
+                        <Button disabled={cartList.length <1 ? true : false}><Link style={{color: 'white'}} className='textDecorationNone' to="/formCart">{!cartList.length <1 ? 'Comprar' : 'Necesita agregar un producto'}</Link></Button>
                     </div>
+                            <div className='precioTotal'>
+                                <h3>
+                                Total: {precioTotal()}$
+                                Cantidad de productos total: {cartList.length}
+                                </h3>
+                            </div>
+
                     
 
             </div>

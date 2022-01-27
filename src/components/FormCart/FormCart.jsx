@@ -1,13 +1,15 @@
 import { getFirestore, Timestamp, collection, addDoc } from "firebase/firestore"
 import { useState } from "react"
 import { Button } from "react-bootstrap"
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext"
+import swal from 'sweetalert'
+
 
 
 export const FormCart = () => {
-
     
+    const navegate = useNavigate()
     const [idOrder, setIdOrder] = useState('')
     const [dataForm, setDataForm] = useState({
         name:"", email:"", phone:""
@@ -39,13 +41,15 @@ export const FormCart = () => {
         const db = getFirestore()
         const ordersCollection = collection(db, 'orders')
         addDoc(ordersCollection, orden)
-        .then(resp => {setIdOrder(resp.id)})
+        .then(resp => {setIdOrder(resp.id) ; swal("¡Su compra a sido exitosa!", `Su ID de seguimiento es: ${resp.id}`, "success");})
         .catch(err => console.log (err))
         .finally(()=>{
             borrarCarrito()
             setDataForm({
                 name:"", email:"", phone:""
             })
+            navegate('/')
+            
         })
     }
     return (
@@ -58,6 +62,7 @@ export const FormCart = () => {
                         name='name'
                         placeholder='Nombre'
                         value={dataForm.name} 
+                        required
                         />
                         <br/>
                         <input 
@@ -65,6 +70,7 @@ export const FormCart = () => {
                         name='phone'
                         placeholder='Telefono'
                         value={dataForm.phone}
+                        required
                          />
                          <br/>
                         <input 
@@ -72,13 +78,12 @@ export const FormCart = () => {
                         name='email'
                         placeholder='Email'
                         value={dataForm.email} 
+                        required
                         />
                         <br/>
-                        <Button onClick={generarOrden}>Generar Orden</Button>
+                        <Button type="submit">Generar Orden</Button>
+                        
                     </form>
-                    {idOrder && <div>
-                        ¡Su compra a sido exitosa! Su ID de seguimiento es: {idOrder}
-                    </div>}
     </>
     )
 
