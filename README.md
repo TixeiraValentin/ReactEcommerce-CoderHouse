@@ -4,7 +4,7 @@
 [EcommerceProyectFinal](https://tixeiravalentin.github.io/ReactEcommerce-CoderHouse/)
 
 ## Contruido con	🧑‍🔧:
----
+
 Lenguajes: HTML, CSS, JavaScript
 Librería: ReactJS (17.0.2), FireBase(9.6.5)
 Frameworks: 
@@ -12,7 +12,7 @@ Frameworks:
 - SweetAlert(2.1.2): Creamos una alerta para el final de la compra, donde va el ID del mismo.
 - React Router DOM(6.2.1): Nos agrega el enrutado en nuestra app.
 
----
+
 ## Para clonar este repositorio🧙:
 
 ```sh
