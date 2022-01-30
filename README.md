@@ -3,7 +3,7 @@
 ## DEMO👾
 [EcommerceProyectFinal](https://tixeiravalentin.github.io/ReactEcommerce-CoderHouse/)
 
-## Contruido con	🧑‍🔧:
+## Construido con	🧑‍🔧:
 
 Lenguajes: HTML, CSS, JavaScript
 Librería: ReactJS (17.0.2), FireBase(9.6.5)
