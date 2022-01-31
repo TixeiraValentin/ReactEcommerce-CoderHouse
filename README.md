@@ -1,7 +1,7 @@
 # Proyecto Final React JavaScript (ECOMMERCE)👨‍💻
 ---
 ## DEMO👾
-[EcommerceProyectFinal](https://tixeiravalentin.github.io/ReactEcommerce-CoderHouse/)
+[EcommerceProyectFinal](https://malu-indumentaria.netlify.app/)
 
 ## Construido con	🧑‍🔧:
 
