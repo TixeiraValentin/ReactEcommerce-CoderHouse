@@ -13,10 +13,12 @@ Frameworks:
 - React Router DOM(6.2.1): Nos agrega el enrutado en nuestra app.
 
 
-## Para clonar este repositorio🧙:
+## Para correr este repositorio🧙:
 
 ```sh
 git clone https://github.com/TixeiraValentin/ReactEcommerce-CoderHouse.git
+npm install
+npm start
 ```
 ## Instalación React JS🏌️:
 Este proyecto se inició con [Create React App](https://github.com/facebook/create-react-app).
